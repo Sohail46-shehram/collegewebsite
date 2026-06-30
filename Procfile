@@ -1,0 +1,1 @@
+web: gunicorn ggc_jauharabad.wsgi:application
