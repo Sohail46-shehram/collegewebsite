@@ -1,0 +1,269 @@
+/* Accounts Pages */
+
+.account-section{
+    min-height:100vh;
+    padding:150px 20px 80px;
+    background:
+        radial-gradient(circle at top left, rgba(0,113,227,.18), transparent 35%),
+        linear-gradient(135deg,#f8fbff,#eef5ff);
+}
+
+.account-box{
+    max-width:520px;
+    margin:auto;
+    background:rgba(255,255,255,.9);
+    border:1px solid rgba(0,113,227,.12);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    padding:45px;
+    box-shadow:0 30px 80px rgba(15,23,42,.12);
+}
+
+.account-box h2{
+    font-size:34px;
+    margin-bottom:10px;
+    color:#0f172a;
+    text-align:center;
+}
+
+.account-box p{
+    color:#64748b;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.account-box input{
+    width:100%;
+    padding:16px 18px;
+    border:1px solid #dbe3ef;
+    border-radius:16px;
+    margin-bottom:16px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.account-box input:focus{
+    border-color:#0071e3;
+    box-shadow:0 0 0 4px rgba(0,113,227,.10);
+}
+
+.account-btn{
+    width:100%;
+    border:none;
+    background:linear-gradient(135deg,#0071e3,#004aad);
+    color:white;
+    padding:16px;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.account-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 35px rgba(0,113,227,.32);
+}
+
+.account-link{
+    margin-top:25px;
+    text-align:center;
+    color:#64748b;
+}
+
+.account-link a{
+    color:#0071e3;
+    font-weight:800;
+    text-decoration:none;
+}
+
+.account-message{
+    padding:14px;
+    border-radius:14px;
+    margin-bottom:18px;
+    background:#eef6ff;
+    color:#0b3d91;
+    text-align:center;
+}
+
+/* Dashboard */
+
+.dashboard-section{
+    min-height:100vh;
+    padding:150px 20px 90px;
+    background:#f6f9ff;
+}
+
+.dashboard-header{
+    max-width:1200px;
+    margin:0 auto 35px;
+    background:linear-gradient(135deg,#0b3d91,#0071e3);
+    color:white;
+    padding:45px;
+    border-radius:32px;
+    box-shadow:0 30px 80px rgba(0,113,227,.25);
+}
+
+.dashboard-header h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.dashboard-header p{
+    color:#dbeafe;
+}
+
+.dashboard-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.dashboard-card{
+    background:white;
+    padding:35px;
+    border-radius:26px;
+    text-decoration:none;
+    color:#0f172a;
+    box-shadow:0 20px 55px rgba(15,23,42,.08);
+    transition:.35s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 80px rgba(15,23,42,.14);
+}
+
+.dashboard-card span{
+    font-size:42px;
+    display:block;
+    margin-bottom:18px;
+}
+
+.dashboard-card h3{
+    margin-bottom:10px;
+}
+
+.dashboard-card p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+@media(max-width:992px){
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .account-box{
+        padding:32px 24px;
+    }
+
+    .dashboard-header h1{
+        font-size:32px;
+    }
+}
+.account-logo{
+    width:75px;
+    height:75px;
+    margin:0 auto 20px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#0071e3,#004aad);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    box-shadow:0 18px 40px rgba(0,113,227,.28);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+@media(max-width:576px){
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+.account-box form{
+    margin-top:25px;
+}
+
+.account-box input{
+    margin-bottom:18px;
+}
+
+.account-btn{
+    margin-top:10px;
+}
+.dashboard-section .account-message{
+    max-width:1200px;
+    margin:0 auto 30px;
+}
+.application-status-box{
+    max-width:1200px;
+    margin:0 auto 35px;
+    background:white;
+    padding:35px;
+    border-radius:28px;
+    box-shadow:0 20px 55px rgba(15,23,42,.08);
+}
+
+.application-status-box h2{
+    margin-bottom:25px;
+    color:#0f172a;
+}
+
+.status-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.status-grid div{
+    background:#f8fbff;
+    padding:18px;
+    border-radius:18px;
+}
+
+.status-grid strong{
+    color:#0f172a;
+}
+
+.status-grid p{
+    margin-top:8px;
+    color:#64748b;
+}
+
+.status-badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    font-weight:800;
+}
+
+.status-pending{
+    background:#fff7ed;
+    color:#f97316 !important;
+}
+
+.status-approved{
+    background:#ecfdf5;
+    color:#16a34a !important;
+}
+
+.status-rejected{
+    background:#fef2f2;
+    color:#dc2626 !important;
+}
+
+@media(max-width:900px){
+    .status-grid{
+        grid-template-columns:1fr;
+    }
+}

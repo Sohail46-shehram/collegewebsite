@@ -1,1 +1,1 @@
-web: gunicorn ggc_jauharabad.wsgi:application
+web: gunicorn config.wsgi:application
