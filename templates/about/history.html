@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ================= Banner ================= -->
+
+<section class="page-banner">
+
+    <img src="{% static 'images/banner/page-banner.png' %}" alt="Banner" class="page-banner-image">
+
+    <div class="page-overlay"></div>
+
+</section>
+
+<!-- ================= History ================= -->
+
+<section class="history-section">
+
+    <div class="container">
+
+        <div class="history-grid">
+
+            <div class="history-image">
+
+                <img src="{% static 'images/about/college.jpg' %}" alt="College">
+
+            </div>
+
+            <div class="history-content">
+
+                <span class="section-tag">
+                    Our History
+                </span>
+
+                <h2>
+                    Government Graduate College Jauharabad
+                </h2>
+
+                <p>
+
+                    Government Graduate College Jauharabad has been serving
+                    the community with quality education for many years.
+                    The college is committed to academic excellence,
+                    discipline, innovation and character building.
+
+                </p>
+
+                <p>
+
+                    Thousands of students have graduated from this institution
+                    and are serving Pakistan in different fields including
+                    education, government services, engineering, medicine,
+                    information technology and business.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

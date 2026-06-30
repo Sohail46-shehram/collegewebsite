@@ -1,0 +1,85 @@
+{% load static %}
+
+<section class="notice-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Stay Updated</span>
+
+            <h2>News & Information</h2>
+
+            <p>
+                Stay informed with the latest announcements, admissions, and academic calendar.
+            </p>
+
+        </div>
+
+        <div class="notice-grid">
+
+            <!-- Latest Notices -->
+
+            <div class="notice-card">
+
+                <div class="icon">
+                    📢
+                </div>
+
+                <h3>Latest Notices</h3>
+
+                <p>
+                    View all latest college notices, announcements and important updates.
+                </p>
+
+                <a href="{% url 'notices' %}">
+                    Read More →
+                </a>
+
+            </div>
+
+            <!-- Admissions -->
+
+            <div class="notice-card">
+
+                <div class="icon">
+                    🎓
+                </div>
+
+                <h3>Admissions</h3>
+
+                <p>
+                    Apply online for ADP & BS Programs through our admission portal.
+                </p>
+
+                <a href="{% url 'admission_portal' %}">
+                    Apply Now →
+                </a>
+
+            </div>
+
+            <!-- Academic Calendar -->
+
+            <div class="notice-card">
+
+                <div class="icon">
+                    📅
+                </div>
+
+                <h3>Academic Calendar</h3>
+
+                <p>
+                    Download the latest academic calendar in PDF format.
+                </p>
+
+                <a href="{% static 'downloads/academic-calendar.pdf' %}" download>
+                    Download →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

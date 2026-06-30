@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="dashboard-section">
+
+    <div class="dashboard-header">
+        <h1>Welcome, {{ request.user.first_name }} 👋</h1>
+        <p>Government Graduate College Jauharabad Student Portal</p>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="account-message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- {% if application %}
+        <div class="application-status-box">
+
+            <h2>📄 Application Status</h2>
+
+            <div class="status-grid">
+                <div>
+                    <strong>Application ID</strong>
+                    <p>#{{ application.id }}</p>
+                </div>
+
+                <div>
+                    <strong>Program</strong>
+                    <p>{{ application.program }}</p>
+                </div>
+
+                <div>
+                    <strong>Applied Date</strong>
+                    <p>{{ application.applied_at|date:"d M Y" }}</p>
+                </div>
+
+                <div>
+                    <strong>Status</strong>
+                    <p class="status-badge status-{{ application.status|lower }}">
+                        {{ application.status }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    {% endif %} -->
+
+    <div class="dashboard-grid">
+
+        {% if not application %}
+        <a href="{% url 'adp_apply' %}" class="dashboard-card">
+            <span>📝</span>
+            <h3>Apply for Admission</h3>
+            <p>Complete your online admission application.</p>
+        </a>
+        {% endif %}
+
+        <a href="#" class="dashboard-card">
+            <span>👤</span>
+            <h3>My Profile</h3>
+            <p>View and update your personal information.</p>
+        </a>
+
+        <a href="{% url 'my_application' %}" class="dashboard-card">
+
+    <span>📄</span>
+
+    <h3>My Applications</h3>
+
+    <p>
+        Track your submitted applications.
+    </p>
+
+</a>
+
+        <a href="{% url 'fee_voucher' %}" class="dashboard-card">
+    <span>💳</span>
+    <h3>Fee Voucher</h3>
+    <p>Download your admission fee voucher.</p>
+</a>
+
+        <a href="{% url 'merit_list' %}" class="dashboard-card">
+    <span>🏆</span>
+    <h3>Merit List</h3>
+    <p>View approved admission applications.</p>
+</a>
+
+        <a href="{% url 'logout' %}" class="dashboard-card">
+            <span>🚪</span>
+            <h3>Logout</h3>
+            <p>Sign out from your student portal.</p>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

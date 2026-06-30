@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+    <div class="banner-content">
+        <h1>Academic Calendar</h1>
+        <p>Home <span>›</span> News <span>›</span> Academic Calendar</p>
+    </div>
+</section>
+
+<section class="news-detail-page">
+    <div class="news-detail-container">
+
+        <img src="{% static 'images/news/calendar.jpg' %}" class="news-detail-img">
+
+        <div class="news-detail-content">
+            <span>Academic Updates</span>
+            <h2>Academic Calendar 2026 Uploaded</h2>
+            <p>
+                The latest academic calendar has been uploaded for students.
+                Download it to view important dates, exams, holidays and academic activities.
+            </p>
+
+            <a href="{% static 'downloads/academic-calendar.pdf' %}" download class="news-detail-btn">
+                Download Calendar PDF →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

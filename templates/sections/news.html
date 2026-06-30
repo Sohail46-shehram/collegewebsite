@@ -1,0 +1,41 @@
+{% load static %}
+
+<section class="news-section">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Latest Updates</span>
+            <h2>News & Events</h2>
+            <p>Stay updated with recent college announcements and activities.</p>
+        </div>
+
+        <div class="news-grid">
+
+            <div class="news-card">
+                <img src="{% static 'images/news/admission.jpg' %}" alt="Admissions">
+                <div class="news-date">29 Jun 2026</div>
+                <h3>Admissions Open 2026</h3>
+                <p>Admissions are now open for Intermediate, ADP and BS Programs.</p>
+                <a href="{% url 'news_admissions' %}">Read More →</a>
+            </div>
+
+            <div class="news-card">
+                <img src="{% static 'images/news/calendar.jpg' %}" alt="Academic Calendar">
+                <div class="news-date">25 Jun 2026</div>
+                <h3>Academic Calendar Uploaded</h3>
+                <p>The latest academic calendar is now available for students.</p>
+                <a href="{% url 'news_calendar' %}">Read More →</a>
+            </div>
+
+            <div class="news-card">
+                <img src="{% static 'images/news/event.jpg' %}" alt="College Event">
+                <div class="news-date">20 Jun 2026</div>
+                <h3>College Event Announced</h3>
+                <p>Students are invited to participate in upcoming academic activities.</p>
+                <a href="{% url 'news_event' %}">Read More →</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>

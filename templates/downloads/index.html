@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        <!-- <h1>Downloads</h1>
+        <p>Home <span>›</span> Downloads</p> -->
+    </div>
+</section>
+
+<section class="downloads-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Student Resources</span>
+            <h2>Important Downloads</h2>
+            <p>Download admission forms, prospectus, fee structure and academic documents.</p>
+        </div>
+
+        <div class="download-grid">
+
+            <div class="download-card">
+                <div class="download-icon">📄</div>
+                <h3>Admission Form</h3>
+                <p>Download the official admission application form.</p>
+                <a href="#">Download PDF</a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">📘</div>
+                <h3>Prospectus</h3>
+                <p>Complete college prospectus with programs and rules.</p>
+                <a href="#">Download PDF</a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">💰</div>
+                <h3>Fee Structure</h3>
+                <p>View program-wise fee structure and dues details.</p>
+                <a href="#">Download PDF</a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">📅</div>
+                <h3>Academic Calendar</h3>
+                <p>Download the latest academic calendar.</p>
+                <a href="#">Download PDF</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

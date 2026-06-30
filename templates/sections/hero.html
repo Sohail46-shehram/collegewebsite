@@ -1,0 +1,99 @@
+{% load static %}
+
+<section class="hero">
+
+    <div class="swiper heroSwiper">
+
+        <div class="swiper-wrapper">
+
+            {% for slide in hero_slides %}
+
+            <div class="swiper-slide">
+
+                <img src="{{ slide.image.url }}" alt="{{ slide.title }}">
+
+                <div class="overlay"></div>
+
+                <div class="hero-content">
+
+                    <span class="badge">Welcome to</span>
+
+                    <h1>{{ slide.title }}</h1>
+
+                    <p>{{ slide.subtitle }}</p>
+
+                    <div class="hero-btns">
+
+                        {% if forloop.counter == 1 %}
+
+                            <a href="{% url 'intermediate' %}" class="btn-primary-custom">
+                                Explore Programs
+                            </a>
+
+                        {% elif forloop.counter == 2 %}
+
+                            <a href="{% url 'admission_portal' %}" class="btn-primary-custom">
+                                Admission Portal
+                            </a>
+
+                        {% elif forloop.counter == 3 %}
+
+                            <a href="{% url 'gallery' %}" class="btn-primary-custom">
+                                View Gallery
+                            </a>
+
+                        {% else %}
+
+                            <a href="{{ slide.button_link }}" class="btn-primary-custom">
+                                {{ slide.button_text }}
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="swiper-slide">
+
+                <img src="{% static 'images/hero/slide1.jpg' %}" alt="">
+
+                <div class="overlay"></div>
+
+                <div class="hero-content">
+
+                    <span class="badge">Welcome to</span>
+
+                    <h1>Government Graduate College Jauharabad</h1>
+
+                    <p>Empowering Minds • Building Futures</p>
+
+                    <div class="hero-btns">
+
+                        <a href="{% url 'intermediate' %}" class="btn-primary-custom">
+                            Explore Programs
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-button-prev"></div>
+
+    </div>
+
+</section>

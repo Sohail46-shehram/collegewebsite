@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+    <div class="banner-content">
+        <h1>College Event</h1>
+        <p>Home <span>›</span> News <span>›</span> Event</p>
+    </div>
+</section>
+
+<section class="news-detail-page">
+    <div class="news-detail-container">
+
+        <img src="{% static 'images/news/event.jpg' %}" class="news-detail-img">
+
+        <div class="news-detail-content">
+            <span>College Event</span>
+            <h2>Upcoming College Event Announced</h2>
+            <p>
+                Students are invited to participate in upcoming academic and co-curricular
+                activities. Further details will be announced by the college administration.
+            </p>
+
+            <a href="{% url 'gallery' %}" class="news-detail-btn">
+                View Gallery →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

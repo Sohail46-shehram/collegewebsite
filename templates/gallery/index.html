@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <!-- <div class="banner-content">
+        <h1>College Gallery</h1>
+        <p>Home <span>›</span> Gallery</p>
+    </div> -->
+</section>
+
+<section class="pro-gallery-section">
+
+    <div class="pro-gallery-container">
+
+        <div class="section-heading">
+            <span>Campus Life</span>
+            <h2>Explore Our College Gallery</h2>
+            <p>
+                Discover classrooms, labs, library, events, sports and beautiful campus moments.
+            </p>
+        </div>
+
+        <div class="pro-gallery-grid">
+
+            <div class="pro-gallery-card" onclick="openGallery(this)">
+                <img src="{% static 'images/gallery/gallery1.jpg' %}" alt="Classroom">
+                <div class="pro-gallery-caption">Classroom</div>
+            </div>
+
+            <div class="pro-gallery-card" onclick="openGallery(this)">
+                <img src="{% static 'images/gallery/gallery2.jpg' %}" alt="Faculty">
+                <div class="pro-gallery-caption">Faculty</div>
+            </div>
+
+            <div class="pro-gallery-card" onclick="openGallery(this)">
+                <img src="{% static 'images/gallery/gallery3.jpg' %}" alt="College Memories">
+                <div class="pro-gallery-caption">College Memories</div>
+            </div>
+
+            <div class="pro-gallery-card" onclick="openGallery(this)">
+                <img src="{% static 'images/gallery/gallery4.jpg' %}" alt="Seminar Hall">
+                <div class="pro-gallery-caption">Seminar Hall</div>
+            </div>
+
+            <div class="pro-gallery-card" onclick="openGallery(this)">
+                <img src="{% static 'images/gallery/gallery5.jpg' %}" alt="Main Hall">
+                <div class="pro-gallery-caption">Main Hall</div>
+            </div>
+
+            <div class="pro-gallery-card" onclick="openGallery(this)">
+                <img src="{% static 'images/gallery/gallery6.jpg' %}" alt="College">
+                <div class="pro-gallery-caption">College</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="pro-lightbox" id="proLightbox">
+    <span class="pro-lightbox-close" onclick="closeGallery()">×</span>
+    <img id="proLightboxImg" src="">
+    <h3 id="proLightboxTitle"></h3>
+</div>
+
+<script>
+function openGallery(card){
+    const img = card.querySelector("img");
+    document.getElementById("proLightboxImg").src = img.src;
+    document.getElementById("proLightboxTitle").innerText = img.alt;
+    document.getElementById("proLightbox").classList.add("show");
+}
+
+function closeGallery(){
+    document.getElementById("proLightbox").classList.remove("show");
+}
+</script>
+
+{% endblock %}

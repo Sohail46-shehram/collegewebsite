@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <span>Get in Touch</span>
+            <h2>Government Graduate College Jauharabad</h2>
+            <p>For admissions, academics, downloads, and general information, contact our college office.</p>
+
+            <div class="contact-card">📍 Jauharabad, District Khushab, Punjab</div>
+            <div class="contact-card">📞 0454920041</div>
+            <div class="contact-card">✉ gc.boys.jauharabad.hed@gmail.com</div>
+            <div class="contact-card">🕒 Monday - Friday: 8:00 AM - 2:00 PM</div>
+        </div>
+
+        <form class="contact-form" method="POST">
+
+    {% csrf_token %}
+
+    <h3>Send Message</h3>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="success-message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required>
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required>
+
+    <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required>
+
+    <textarea
+        rows="6"
+        name="message"
+        placeholder="Your Message"
+        required></textarea>
+
+    <button type="submit">
+        Send Message
+    </button>
+
+</form>
+
+    </div>
+
+    <div class="map-box">
+        <iframe
+            src="https://www.google.com/maps?q=Government%20Graduate%20College%20Jauharabad&output=embed"
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+{% endblock %}

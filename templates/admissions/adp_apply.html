@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        <h1>Online Admission Form</h1>
+        <p>Home <span>›</span> Student Portal <span>›</span> Admission Form</p>
+    </div>
+</section>
+
+<section class="admission-section">
+    <div class="container">
+
+        <div class="admission-header">
+            <span>Admission Application</span>
+            <h2>Submit Your Admission Form</h2>
+            <p>Please fill all required information carefully.</p>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data" class="admission-form">
+
+            {% csrf_token %}
+
+            <div class="form-card">
+                <h3>👤 Personal Information</h3>
+
+                <div class="form-grid">
+                    <div class="input-box">
+                        <label>Full Name</label>
+                        {{ form.full_name }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Father Name</label>
+                        {{ form.father_name }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>CNIC / B-Form</label>
+                        {{ form.cnic }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Phone Number</label>
+                        {{ form.phone }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="input-box full">
+                        <label>Address</label>
+                        {{ form.address }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h3>🎓 Program Selection</h3>
+
+                <div class="form-grid">
+                    <div class="input-box">
+                        <label>Program Type</label>
+                        {{ form.program_type }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Program</label>
+                        {{ form.program }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h3>📚 Academic Information</h3>
+
+                <div class="form-grid">
+                    <div class="input-box">
+                        <label>Matric Board</label>
+                        {{ form.matric_board }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Matric Total Marks</label>
+                        {{ form.matric_total_marks }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Matric Obtained Marks</label>
+                        {{ form.matric_obtained_marks }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Intermediate Board</label>
+                        {{ form.inter_board }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Intermediate Total Marks</label>
+                        {{ form.inter_total_marks }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Intermediate Obtained Marks</label>
+                        {{ form.inter_obtained_marks }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <h3>📄 Upload Documents</h3>
+
+                <div class="form-grid">
+                    <div class="input-box">
+                        <label>Passport Size Photo</label>
+                        {{ form.photo }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Matric Result Card</label>
+                        {{ form.matric_result_card }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>Intermediate Result Card</label>
+                        {{ form.inter_result_card }}
+                    </div>
+
+                    <div class="input-box">
+                        <label>CNIC / B-Form File</label>
+                        {{ form.cnic_file }}
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

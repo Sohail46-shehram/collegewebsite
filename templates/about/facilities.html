@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Banner -->
+<section class="page-banner">
+
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+
+    <div class="page-overlay"></div>
+
+    <!-- <div class="banner-content">
+        <h1>Campus Facilities</h1>
+        <p>Home <span>›</span> About <span>›</span> Facilities</p>
+    </div> -->
+
+</section>
+
+<!-- Facilities -->
+
+<section class="facilities-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>Campus Facilities</span>
+
+            <h2>Providing a Modern Learning Environment</h2>
+
+            <p>
+                Government Graduate College Jauharabad offers modern facilities
+                that support academic excellence and student development.
+            </p>
+
+        </div>
+
+        <div class="facility-grid">
+
+            <div class="facility-card">
+                <div class="facility-icon">💻</div>
+                <h3>Computer Labs</h3>
+                <p>Well-equipped computer laboratories with modern systems and internet access.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon">📚</div>
+                <h3>Library</h3>
+                <p>A rich collection of books, journals, and digital learning resources.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon">🧪</div>
+                <h3>Science Laboratories</h3>
+                <p>Physics, Chemistry, and Biology labs with modern equipment.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon">🏀</div>
+                <h3>Sports Complex</h3>
+                <p>Indoor and outdoor sports facilities for healthy student activities.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon">🕌</div>
+                <h3>Prayer Area</h3>
+                <p>A peaceful prayer facility for students and staff members.</p>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-icon">🚌</div>
+                <h3>Transport</h3>
+                <p>Safe and convenient transportation facilities for students.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

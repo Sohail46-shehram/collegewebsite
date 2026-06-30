@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="application-page">
+
+    <div class="application-container">
+
+        <div class="application-hero">
+            <div>
+                <span>Admission Portal</span>
+                <h1>Merit List 2026</h1>
+                <p>Government Graduate College Jauharabad official program-wise merit list.</p>
+            </div>
+        </div>
+
+        <div class="merit-table-box">
+
+            <div class="merit-header">
+                <h2>🏆 Official Merit List</h2>
+                <button onclick="window.print()">🖨 Print Merit List</button>
+            </div>
+
+            <form method="GET" class="merit-filter">
+
+                <select name="program">
+                    <option value="">All Programs</option>
+
+                    {% for value, label in programs %}
+                        <option value="{{ value }}" {% if selected_program == value %}selected{% endif %}>
+                            {{ label }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">
+                    Filter Merit List
+                </button>
+
+            </form>
+
+            {% if selected_program %}
+                <div class="selected-program-box">
+                    Showing merit list for:
+                    <strong>{{ selected_program }}</strong>
+                </div>
+            {% endif %}
+
+            <table class="merit-table">
+                <thead>
+                    <tr>
+                        <th>Merit No</th>
+                        <th>Student Name</th>
+                        <th>Program</th>
+                        <th>Matric %</th>
+                        <th>Inter %</th>
+                        <th>Final Merit %</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for app in applications %}
+                    <tr>
+                        <td>
+                            {% if app.merit_position %}
+                                {{ app.merit_position }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+
+                        <td>{{ app.full_name }}</td>
+
+                        <td>{{ app.program }}</td>
+
+                        <td>{{ app.matric_percentage|floatformat:2 }}%</td>
+
+                        <td>{{ app.inter_percentage|floatformat:2 }}%</td>
+
+                        <td>
+                            <strong>{{ app.merit_percentage|floatformat:2 }}%</strong>
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-{{ app.status|lower }}">
+                                {{ app.status }}
+                            </span>
+                        </td>
+                    </tr>
+
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" class="empty-merit">
+                            {% if selected_program %}
+                                No merit list available for {{ selected_program }} yet.
+                            {% else %}
+                                No merit list available yet.
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

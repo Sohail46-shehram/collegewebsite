@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="voucher-page">
+
+    <div class="voucher-container">
+
+        <div class="voucher-actions">
+            <button onclick="window.print()">🖨 Print Voucher</button>
+            <a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+        </div>
+
+        {% if application %}
+
+        <div class="fee-voucher">
+
+            <div class="voucher-header">
+
+                <div class="voucher-logo">
+                    <img src="{% static 'images/logo/logo.png' %}" alt="Logo">
+                </div>
+
+                <div class="voucher-title">
+                    <h1>Government Graduate College Jauharabad</h1>
+                    <h3>Admission Fee Voucher</h3>
+                    <p>Department of Higher Education, Government of Punjab</p>
+                </div>
+
+                <div class="voucher-photo">
+                    <img src="{{ application.photo.url }}" alt="Student Photo">
+                </div>
+
+            </div>
+
+            <div class="voucher-meta">
+
+                <div>
+                    <strong>Voucher No</strong>
+                    <span>GGC-FEE-2026-{{ application.id }}</span>
+                </div>
+
+                <div>
+                    <strong>Issue Date</strong>
+                    <span>{{ application.applied_at|date:"d M Y" }}</span>
+                </div>
+
+                <div>
+                    <strong>Due Date</strong>
+                    <span>31 Aug 2026</span>
+                </div>
+
+                <div>
+                    <strong>Status</strong>
+                    <span>{{ application.status }}</span>
+                </div>
+
+            </div>
+
+            <div class="voucher-section-title">
+                Student Information
+            </div>
+
+            <div class="voucher-info-grid">
+
+                <div>
+                    <strong>Student Name</strong>
+                    <span>{{ application.full_name }}</span>
+                </div>
+
+                <div>
+                    <strong>Father Name</strong>
+                    <span>{{ application.father_name }}</span>
+                </div>
+
+                <div>
+                    <strong>CNIC / B-Form</strong>
+                    <span>{{ application.cnic }}</span>
+                </div>
+
+                <div>
+                    <strong>Program</strong>
+                    <span>{{ application.program }}</span>
+                </div>
+
+                <div>
+                    <strong>Application No</strong>
+                    <span>GGC-2026-{{ application.id }}</span>
+                </div>
+
+                <div>
+                    <strong>Phone</strong>
+                    <span>{{ application.phone }}</span>
+                </div>
+
+            </div>
+
+            <div class="voucher-section-title">
+                Fee Details
+            </div>
+
+            <table class="fee-table">
+
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Admission Fee</td>
+                        <td>Rs. 5,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Registration Fee</td>
+                        <td>Rs. 1,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Library Fee</td>
+                        <td>Rs. 500</td>
+                    </tr>
+
+                    <tr>
+                        <td>Examination Fee</td>
+                        <td>Rs. 1,500</td>
+                    </tr>
+
+                    <tr>
+                        <td>Student Card Fee</td>
+                        <td>Rs. 500</td>
+                    </tr>
+
+                    <tr class="total-row">
+                        <td>Total Payable</td>
+                        <td>Rs. 8,500</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <div class="voucher-payment">
+
+                <div>
+                    <h3>Bank Details</h3>
+                    <p><strong>Bank Name:</strong> Bank of Punjab</p>
+                    <p><strong>Account Title:</strong> GGC Jauharabad Admission</p>
+                    <p><strong>Account No:</strong> XXXX-XXXX-XXXX</p>
+                </div>
+
+                <div class="qr-box">
+                    <span>QR</span>
+                    <p>Verification Code</p>
+                </div>
+
+            </div>
+
+            <div class="voucher-instructions">
+
+                <h3>Important Instructions</h3>
+
+                <ul>
+                    <li>Deposit the fee before the due date.</li>
+                    <li>Keep the bank receipt safe for verification.</li>
+                    <li>Fee once deposited is non-refundable.</li>
+                    <li>Bring this voucher at the time of document verification.</li>
+                </ul>
+
+            </div>
+
+            <div class="signature-row">
+
+                <div>
+                    <span></span>
+                    <p>Student Signature</p>
+                </div>
+
+                <div>
+                    <span></span>
+                    <p>Bank Officer</p>
+                </div>
+
+                <div>
+                    <span></span>
+                    <p>Admission Officer</p>
+                </div>
+
+                <div>
+                    <span></span>
+                    <p>Principal / Stamp</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="no-voucher">
+            <h2>No Application Found</h2>
+            <p>Please submit your admission application first.</p>
+            <a href="{% url 'adp_apply' %}">Apply Now</a>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

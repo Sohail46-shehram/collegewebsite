@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        <h1>{{ department.name }} Department</h1>
+        <!-- <p>Home <span>›</span> Departments <span>›</span> {{ department.name }}</p> -->
+    </div>
+</section>
+
+<section class="department-detail-section">
+
+    <div class="department-detail-container">
+
+        <div class="department-detail-card">
+
+            <div class="department-detail-icon">
+                {{ department.icon }}
+            </div>
+
+            <span>Academic Department</span>
+
+            <h2>{{ department.name }}</h2>
+
+            <p>
+                {{ department.description }}
+            </p>
+
+            <div class="department-features">
+
+                {% for feature in department.features %}
+                    <div>✅ {{ feature }}</div>
+                {% endfor %}
+
+            </div>
+
+            <a href="{% url 'faculty' %}" class="dept-btn">
+                View Faculty →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

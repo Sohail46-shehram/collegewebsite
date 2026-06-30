@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner1.png' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+</section>
+
+<section class="academic-premium">
+    <div class="container">
+
+        <div class="academic-intro">
+            <span>Intermediate Programs</span>
+            <h2>Choose Your Future Path</h2>
+            <p>
+                Explore carefully designed intermediate programs that prepare students
+                for medical, engineering, computer science, commerce, and humanities careers.
+            </p>
+        </div>
+
+        <div class="premium-program-grid">
+
+            <div class="premium-program-card">
+                <div class="program-icon">🩺</div>
+                <span class="program-badge">Science</span>
+                <h3>FSc Pre-Medical</h3>
+                <p>Designed for students who aim to pursue medicine, pharmacy, biotechnology, and life sciences.</p>
+                <ul>
+                    <li>⏱ Duration: 2 Years</li>
+                    <li>🎓 Eligibility: Matric Science</li>
+                    <li>📚 Focus: Biology, Chemistry, Physics</li>
+                </ul>
+                <a href="#">Explore Program →</a>
+            </div>
+
+            <div class="premium-program-card">
+                <div class="program-icon">⚙️</div>
+                <span class="program-badge">Science</span>
+                <h3>FSc Pre-Engineering</h3>
+                <p>Best for students planning careers in engineering, technology, architecture, and applied sciences.</p>
+                <ul>
+                    <li>⏱ Duration: 2 Years</li>
+                    <li>🎓 Eligibility: Matric Science</li>
+                    <li>📚 Focus: Math, Physics, Chemistry</li>
+                </ul>
+                <a href="#">Explore Program →</a>
+            </div>
+
+            <div class="premium-program-card">
+                <div class="program-icon">💻</div>
+                <span class="program-badge">Technology</span>
+                <h3>ICS</h3>
+                <p>A strong foundation in computer science, programming, mathematics, and IT-related fields.</p>
+                <ul>
+                    <li>⏱ Duration: 2 Years</li>
+                    <li>🎓 Eligibility: Matric</li>
+                    <li>📚 Focus: Computer, Math, Physics</li>
+                </ul>
+                <a href="#">Explore Program →</a>
+            </div>
+
+            <div class="premium-program-card">
+                <div class="program-icon">📊</div>
+                <span class="program-badge">Commerce</span>
+                <h3>I.Com</h3>
+                <p>Commerce and accounting foundation for students interested in business, finance, and management.</p>
+                <ul>
+                    <li>⏱ Duration: 2 Years</li>
+                    <li>🎓 Eligibility: Matric</li>
+                    <li>📚 Focus: Accounting, Banking, Business</li>
+                </ul>
+                <a href="#">Explore Program →</a>
+            </div>
+
+            <div class="premium-program-card">
+                <div class="program-icon">📖</div>
+                <span class="program-badge">Humanities</span>
+                <h3>FA</h3>
+                <p>Arts and humanities program for students interested in languages, social sciences, and education.</p>
+                <ul>
+                    <li>⏱ Duration: 2 Years</li>
+                    <li>🎓 Eligibility: Matric</li>
+                    <li>📚 Focus: Arts, Literature, Social Sciences</li>
+                </ul>
+                <a href="#">Explore Program →</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Banner -->
+<section class="page-banner">
+
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+
+    <div class="page-overlay"></div>
+
+    <!-- <div class="banner-content">
+        <h1>Principal's Message</h1>
+        <p>Home <span>›</span> About <span>›</span> Principal's Message</p>
+    </div> -->
+
+</section>
+
+<!-- Principal Section -->
+
+<section class="principal-page">
+
+<div class="container">
+
+<div class="principal-wrapper">
+
+<div class="principal-image">
+
+{% if principal and principal.image %}
+    <img src="{{ principal.image.url }}" alt="{{ principal.name }}">
+{% else %}
+    <img src="{% static 'images/principal/principal.jpg' %}" alt="Principal">
+{% endif %}
+
+</div>
+
+<div class="principal-content">
+
+<span class="section-tag">
+Message from the Principal
+</span>
+
+<h2>{{ principal.name }}</h2>
+
+<h4>{{ principal.designation }}</h4>
+
+<p>
+
+{{ principal.message }}
+
+</p>
+
+<div class="quote-box">
+
+"Education is not only about acquiring knowledge; it is about building character, developing leadership, and preparing students to serve humanity."
+
+</div>
+
+<div class="signature">
+
+<h3>{{ principal.name }}</h3>
+
+<span>Principal</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Core Values -->
+
+<section class="values-area">
+
+<div class="container">
+
+<h2>Our Educational Values</h2>
+
+<div class="values-grid">
+
+<div class="value-box">
+
+🎓
+
+<h3>Academic Excellence</h3>
+
+<p>Providing high quality education for future leaders.</p>
+
+</div>
+
+<div class="value-box">
+
+🤝
+
+<h3>Integrity</h3>
+
+<p>Promoting honesty, ethics and responsibility.</p>
+
+</div>
+
+<div class="value-box">
+
+💡
+
+<h3>Innovation</h3>
+
+<p>Encouraging creativity and modern learning.</p>
+
+</div>
+
+<div class="value-box">
+
+🌍
+
+<h3>Community Service</h3>
+
+<p>Preparing students to contribute positively to society.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

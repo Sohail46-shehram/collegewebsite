@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        <h1>Vision & Mission</h1>
+    </div>
+</section>
+
+<section class="vision-page">
+    <div class="container">
+
+        <div class="vision-intro">
+            <span>Our Direction</span>
+            <h2>Inspiring Excellence, Building Character</h2>
+            <p>
+                Government Graduate College Jauharabad is committed to producing
+                confident, skilled, responsible, and disciplined students through
+                quality education and character building.
+            </p>
+        </div>
+
+        <div class="vm-grid">
+            <div class="vm-card">
+                <div class="vm-icon">👁️</div>
+                <h3>Our Vision</h3>
+                <p>
+                    To become a leading educational institution that nurtures
+                    knowledgeable, innovative, and responsible citizens through
+                    academic excellence, discipline, and leadership.
+                </p>
+            </div>
+
+            <div class="vm-card">
+                <div class="vm-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>
+                    To provide quality education through dedicated faculty,
+                    modern learning methods, research opportunities, and
+                    co-curricular activities for lifelong success.
+                </p>
+            </div>
+        </div>
+
+        <div class="values-section">
+            <h2>Our Core Values</h2>
+
+            <div class="values-grid">
+                <div class="value-card">📘 <h4>Excellence</h4><p>Promoting high academic standards.</p></div>
+                <div class="value-card">🤝 <h4>Integrity</h4><p>Developing honesty and responsibility.</p></div>
+                <div class="value-card">💡 <h4>Innovation</h4><p>Encouraging creativity and modern learning.</p></div>
+                <div class="value-card">🏆 <h4>Leadership</h4><p>Preparing students for future challenges.</p></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

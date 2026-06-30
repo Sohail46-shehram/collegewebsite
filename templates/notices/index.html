@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        <h1>Latest Notices</h1>
+        <p>Home <span>›</span> Notices</p>
+    </div>
+</section>
+
+<section class="downloads-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>College Updates</span>
+            <h2>Latest News & Information</h2>
+            <p>Stay updated with admissions, academic schedules, exams and college announcements.</p>
+        </div>
+
+        <div class="download-grid">
+
+            <div class="download-card">
+                <div class="download-icon">📢</div>
+                <h3>Admissions 2026</h3>
+                <p>ADP and BS admissions will start from 02 August 2026.</p>
+                <a href="{% url 'admission_portal' %}">View Details</a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">📅</div>
+                <h3>Academic Calendar</h3>
+                <p>Download the latest academic calendar for important dates.</p>
+                <a href="{% static 'downloads/academic-calendar.pdf' %}" download>Download PDF</a>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">🏆</div>
+                <h3>Merit Lists</h3>
+                <p>View official merit lists published by the admission office.</p>
+                <a href="{% url 'merit_list' %}">View Merit List</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

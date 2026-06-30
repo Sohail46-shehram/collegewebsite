@@ -1,0 +1,73 @@
+{% load static %}
+
+<nav class="pro-navbar">
+    <div class="pro-nav-container">
+
+        <a href="/" class="pro-logo">
+            <img src="{% static 'images/logo/logo.png' %}" alt="GGC Logo">
+            <div>
+                <span>Government Graduate College</span>
+                <small>Jauharabad</small>
+            </div>
+        </a>
+
+        <ul class="pro-menu">
+            <li><a href="/">Home</a></li>
+
+            <li class="pro-dropdown">
+                <a href="#">About ▾</a>
+                <div class="pro-dropdown-menu">
+                    <a href="{% url 'history' %}">College History</a>
+                    <a href="{% url 'vision' %}">Vision & Mission</a>
+
+                    <a href="{% url 'principal' %}">Principal Message</a>
+
+                    <a href="{% url 'facilities' %}">Facilities</a>
+                </div>
+            </li>
+
+            <li class="pro-dropdown">
+                <a href="#">Academics ▾</a>
+                <div class="pro-dropdown-menu">
+                    <a href="{% url 'intermediate' %}">Intermediate</a>
+                    <a href="{% url 'adp' %}">ADP Programs</a>
+                    <a href="{% url 'bs' %}">BS Programs</a>
+
+                </div>
+            </li>
+
+            <li><a href="{% url 'faculty' %}">Faculty</a></li>
+           <li><a href="{% url 'downloads' %}">Downloads</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+            <li class="pro-dropdown">
+
+   <li class="pro-dropdown admission-highlight">
+
+    <li class="pro-dropdown admission-highlight">
+
+    <a href="{% url 'admission_portal' %}" class="admission-premium-btn">
+        <span class="admission-dot"></span>
+        <span>
+            Admissions Open
+            <small>Apply for 2026</small>
+        </span>
+    </a>
+
+    <div class="pro-dropdown-menu admission-menu">
+        <a href="{% url 'admission_portal' %}">Admission Portal</a>
+        <a href="{% url 'opening_soon' %}">Apply Online</a>
+        <a href="#">Eligibility</a>
+        <a href="#">Fee Structure</a>
+        <a href="#">Prospectus</a>
+        <a href="{% url 'merit_list' %}">
+    Merit Lists
+</a>
+    </div>
+
+</li>
+        </ul>
+
+    </div>
+</nav>

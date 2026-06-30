@@ -1,0 +1,66 @@
+{% load static %}
+
+<section class="principal-section">
+
+    <div class="container">
+
+        <div class="principal-grid">
+
+            <!-- Principal Image -->
+            <div class="principal-image">
+
+                {% if principal %}
+                    <img src="{{ principal.image.url }}" alt="{{ principal.name }}">
+                {% else %}
+                    <img src="{% static 'images/principal/principal.jpg' %}" alt="Principal">
+                {% endif %}
+
+            </div>
+
+            <!-- Principal Content -->
+            <div class="principal-content">
+
+                <span class="section-tag">
+                    Principal's Message
+                </span>
+
+                <h2>
+                    Welcome to Government Graduate College Jauharabad
+                </h2>
+
+                {% if principal %}
+
+                    <p>
+                        {{ principal.message }}
+                    </p>
+
+                    <h4>{{ principal.name }}</h4>
+
+                    <small>{{ principal.designation }}</small>
+
+                {% else %}
+
+                    <p>
+                        Welcome to Government Graduate College Jauharabad. We are committed
+                        to providing quality education, academic excellence, and character
+                        building for our students.
+                    </p>
+
+                    <h4>Principal</h4>
+
+                    <small>Government Graduate College Jauharabad</small>
+
+                {% endif %}
+
+                <br><br>
+
+                <a href="{% url 'principal' %}" class="read-btn">
+    Read Full Message
+</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

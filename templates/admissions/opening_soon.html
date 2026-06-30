@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="opening-section">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="opening-bg">
+
+    <div class="opening-overlay"></div>
+
+    <div class="opening-card">
+
+        <span class="opening-badge">Admissions 2026</span>
+
+        <h1>Admissions Opening Soon</h1>
+
+        <p>
+            Online applications will start from
+            <strong>02 August 2026</strong>.
+        </p>
+
+        <div class="countdown" id="countdown">
+            <div><h2 id="days">00</h2><span>Days</span></div>
+            <div><h2 id="hours">00</h2><span>Hours</span></div>
+            <div><h2 id="minutes">00</h2><span>Minutes</span></div>
+            <div><h2 id="seconds">00</h2><span>Seconds</span></div>
+        </div>
+
+        <div class="opening-actions">
+            <!-- <a href="{% url 'admission_portal' %}" class="back-btn">
+                Admission Details
+            </a> -->
+
+            <a href="{% url 'adp' %}" class="outline-btn">
+                Back to Programs
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const openingDate = new Date("August 2, 2026 00:00:00").getTime();
+
+    const timer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = openingDate - now;
+
+        if (distance <= 0) {
+            clearInterval(timer);
+
+            document.querySelector(".opening-card h1").innerHTML = "Admissions Are Open";
+            document.querySelector(".opening-card p").innerHTML = "Online applications are now available.";
+            document.getElementById("countdown").style.display = "none";
+
+            document.querySelector(".opening-actions").innerHTML = `
+                <a href="{% url 'register' %}" class="back-btn">
+                    Register Now →
+                </a>
+            `;
+
+            return;
+        }
+
+        document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+</script>
+
+{% endblock %}

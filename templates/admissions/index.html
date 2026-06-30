@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+        <h1>Admissions 2026</h1>
+        <p>Home <span>›</span> Admissions <span>›</span> Admission Portal</p>
+    </div>
+</section>
+
+<section class="admission-portal">
+    <div class="container">
+
+        <div class="admission-hero-card">
+            <div>
+                {% if admission_open %}
+    <span class="admission-status open">Admissions Open</span>
+{% else %}
+    <span class="admission-status closed">Opening Soon</span>
+{% endif %}
+                <h2>Apply for ADP/BS Programs 2026</h2>
+                <p>
+                    Online applications for Associate Degree Programs will start from
+                    <strong>02 August 2026</strong>.
+                </p>
+            </div>
+
+            {% if admission_open %}
+    <a href="{% url 'register' %}" class="portal-apply-btn">
+        Apply Online →
+    </a>
+{% else %}
+    <a href="{% url 'opening_soon' %}" class="portal-apply-btn">
+        Opening Soon →
+    </a>
+{% endif %}
+        </div>
+
+        <div class="portal-grid">
+
+            <div class="portal-card">
+                <h3>📅 Important Dates</h3>
+                <p>Application Start: 02 August 2026</p>
+                <p>Last Date: 31 August 2026</p>
+            </div>
+
+            <div class="portal-card">
+                <h3>✅ Eligibility</h3>
+                <p>Intermediate or equivalent qualification is required for ADP admission.</p>
+            </div>
+
+            <div class="portal-card">
+                <h3>📄 Required Documents</h3>
+                <p>CNIC/B-Form, Matric Certificate, Intermediate Result Card, Photos.</p>
+            </div>
+
+            <div class="portal-card">
+                <h3>💰 Fee Structure</h3>
+                <p>Fee details will be available in the prospectus and admission office.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="application-page">
+
+    <div class="application-container">
+      <div class="print-header">
+
+    <div class="print-top">
+
+        <img src="{% static 'images/logo/logo.png' %}" class="print-logo">
+
+        <div class="print-college">
+
+            <h1>GOVERNMENT GRADUATE COLLEGE JAUHARABAD</h1>
+
+            <h3>Online Admission Application Form</h3>
+
+            <p>Department of Higher Education, Government of Punjab</p>
+
+        </div>
+
+        <div class="student-photo">
+
+            <img src="{{ application.photo.url }}">
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="print-details">
+
+        <p><strong>Application No:</strong> GGC-2026-{{ application.id }}</p>
+
+        <p><strong>Student Name:</strong> {{ application.full_name }}</p>
+
+        <p><strong>Program:</strong> {{ application.program }}</p>
+
+        <p><strong>Date:</strong> {{ application.applied_at|date:"d M Y" }}</p>
+
+    </div>
+
+</div>
+
+</div>
+
+        <div class="application-hero">
+            <div>
+                <span>Student Portal</span>
+                <h1>My Admission Application</h1>
+                <p>View your submitted application, uploaded documents and current admission status.</p>
+            </div>
+
+            {% if application %}
+                <div class="hero-status status-{{ application.status|lower }}">
+                    {{ application.status }}
+                </div>
+            {% endif %}
+        </div>
+
+        {% if application %}
+
+        <div class="application-layout">
+
+            <div class="application-main">
+
+                <div class="info-card">
+                    <h2>👤 Personal Information</h2>
+
+                    <div class="info-grid">
+                        <div><strong>Full Name</strong><p>{{ application.full_name }}</p></div>
+                        <div><strong>Father Name</strong><p>{{ application.father_name }}</p></div>
+                        <div><strong>CNIC / B-Form</strong><p>{{ application.cnic }}</p></div>
+                        <div><strong>Phone</strong><p>{{ application.phone }}</p></div>
+                        <div><strong>Email</strong><p>{{ application.email }}</p></div>
+                        <div><strong>Address</strong><p>{{ application.address }}</p></div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2>🎓 Program Details</h2>
+
+                    <div class="info-grid">
+                        <div><strong>Program Type</strong><p>{{ application.program_type }}</p></div>
+                        <div><strong>Selected Program</strong><p>{{ application.program }}</p></div>
+                        <div><strong>Applied Date</strong><p>{{ application.applied_at|date:"d M Y" }}</p></div>
+                        <div><strong>Application No</strong><p>#GGC-2026-{{ application.id }}</p></div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2>📚 Academic Record</h2>
+
+                    <div class="info-grid">
+                        <div><strong>Matric Board</strong><p>{{ application.matric_board }}</p></div>
+                        <div><strong>Matric Marks</strong><p>{{ application.matric_obtained_marks }}/{{ application.matric_total_marks }}</p></div>
+                        <div><strong>Intermediate Board</strong><p>{{ application.inter_board }}</p></div>
+                        <div><strong>Inter Marks</strong><p>{{ application.inter_obtained_marks }}/{{ application.inter_total_marks }}</p></div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2>📎 Uploaded Documents</h2>
+
+                    <div class="documents-grid">
+
+                        <a href="{{ application.photo.url }}" target="_blank" class="document-card">
+                            <span>📷</span>
+                            <div>
+                                <h4>Passport Photo</h4>
+                                <p>View uploaded image</p>
+                            </div>
+                        </a>
+
+                        <a href="{{ application.matric_result_card.url }}" target="_blank" class="document-card">
+                            <span>📄</span>
+                            <div>
+                                <h4>Matric Result Card</h4>
+                                <p>View document</p>
+                            </div>
+                        </a>
+
+                        <a href="{{ application.inter_result_card.url }}" target="_blank" class="document-card">
+                            <span>📄</span>
+                            <div>
+                                <h4>Intermediate Result Card</h4>
+                                <p>View document</p>
+                            </div>
+                        </a>
+
+                        <a href="{{ application.cnic_file.url }}" target="_blank" class="document-card">
+                            <span>🆔</span>
+                            <div>
+                                <h4>CNIC / B-Form</h4>
+                                <p>View document</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <aside class="status-panel">
+
+                <h3>Application Summary</h3>
+
+                <div class="status-circle status-{{ application.status|lower }}">
+                    {{ application.status }}
+                </div>
+
+                <div class="summary-item">
+                    <span>Application ID</span>
+                    <strong>#GGC-2026-{{ application.id }}</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>Program</span>
+                    <strong>{{ application.program }}</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>Submitted On</span>
+                    <strong>{{ application.applied_at|date:"d M Y" }}</strong>
+                </div>
+
+                <div class="summary-note">
+                    Your application is currently under review by the admission office.
+                </div>
+
+            </aside>
+
+        </div>
+
+        <div class="application-actions">
+            <button onclick="window.print()">🖨 Print Application</button>
+            <a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+        </div>
+
+        {% else %}
+
+        <div class="no-application">
+            <h2>No Application Found</h2>
+            <p>You have not submitted any admission application yet.</p>
+            <a href="{% url 'adp_apply' %}">Apply Now</a>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

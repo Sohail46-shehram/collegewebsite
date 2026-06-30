@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+    <img src="{% static 'images/banner/page-banner.jpg' %}" class="page-banner-image">
+    <div class="page-overlay"></div>
+    <div class="banner-content">
+        <h1>Admissions Open 2026</h1>
+        <!-- <p>Home <span>›</span> News <span>›</span> Admissions</p> -->
+    </div>
+</section>
+
+<section class="news-detail-page">
+    <div class="news-detail-container">
+
+        <img src="{% static 'images/news/admission.jpg' %}" class="news-detail-img">
+
+        <div class="news-detail-content">
+            <span>Admission Notice</span>
+            <h2>Admissions Open for ADP & BS Programs 2026</h2>
+            <p>
+                Government Graduate College Jauharabad announces admissions for Intermediate,
+                ADP and BS Programs. Online applications will start from 02 August 2026.
+            </p>
+
+            <a href="{% url 'admission_portal' %}" class="news-detail-btn">
+                View Admission Portal →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

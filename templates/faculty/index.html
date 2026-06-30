@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner">
+
+    <img src="{% static 'images/banner/page-banner.' %}" class="page-banner-image">
+
+    <div class="page-overlay"></div>
+
+    <div class="banner-content">
+<!-- 
+        <h1>Our Faculty</h1>
+
+        <p>
+            Home <span>›</span> Faculty
+        </p> -->
+
+    </div>
+
+</section>
+
+<section class="faculty-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Academic Excellence</span>
+
+<h2>Meet Our Faculty</h2>
+
+<p>
+
+Our experienced and dedicated faculty members are committed to
+providing quality education and inspiring students toward excellence.
+
+</p>
+
+</div>
+
+<div class="faculty-grid">
+
+<!-- Faculty Card -->
+
+<div class="faculty-card">
+
+<img src="{% static 'images/faculty/p1.jpeg' %}">
+
+<h3>Prof.Najam Ul Hassan</h3>
+
+<h4>Assistant Professor</h4>
+
+<p>Computer Science Department</p>
+
+<a href="#">
+View Profile
+</a>
+
+</div>
+
+<!-- Faculty Card -->
+
+<div class="faculty-card">
+
+<img src="{% static 'images/faculty/p2.jpg' %}">
+
+<h3>Prof.Muhammad Ali Raja</h3>
+
+<h4>Associate Professor</h4>
+
+<p>Social Work Department</p>
+
+<a href="#">
+View Profile
+</a>
+
+</div>
+
+<!-- Faculty Card -->
+
+<div class="faculty-card">
+
+<img src="{% static 'images/faculty/p3.jpg' %}">
+
+<h3>Prof.Dr Imran Haral</h3>
+
+<h4>Lecturer</h4>
+
+<p>Mathematics Mathematics</p>
+
+<a href="#">
+View Profile
+</a>
+
+</div>
+
+<!-- Faculty Card -->
+
+<div class="faculty-card">
+
+<img src="{% static 'images/faculty/p4.jpg' %}">
+
+<h3>Prof.kamran Aslam</h3>
+
+<h4>Associate Professor</h4>
+
+<p>English Department</p>
+
+<a href="#">
+View Profile
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
